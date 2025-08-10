@@ -78,6 +78,10 @@
 
 ## My recommendation for a startup is k3d.
 
+## Demo (k3d)
+
+![AsciiArtify k3d Demo](AsciiArtify_k3d_Demo.gif)
+
 [![asciicast](https://asciinema.org/a/FNHbz50TdSAtX5oibNHRCsy7u.svg)](https://asciinema.org/a/FNHbz50TdSAtX5oibNHRCsy7u)
 
 > 🔍 **Startup Recommendation**:  
