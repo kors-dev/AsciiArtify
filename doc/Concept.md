@@ -76,6 +76,8 @@
 | **Lightweight PoC, fast startup, low resource** | k3d                      |
 | **Edge/IoT simulation or ARM platforms**     | k3d                      |
 
+## My recommendation for a startup is k3d.
+
 [![asciicast](https://asciinema.org/a/FNHbz50TdSAtX5oibNHRCsy7u.svg)](https://asciinema.org/a/FNHbz50TdSAtX5oibNHRCsy7u)
 
 > 🔍 **Startup Recommendation**:  
