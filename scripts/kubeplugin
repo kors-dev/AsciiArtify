@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Arguments:
+#   $1 = namespace (e.g. kube-system)
+#   $2 = resource type (pods|nodes), defaults to pods
+
+NAMESPACE="$1"
+RESOURCE_TYPE="${2:-pods}"
+
+{
+  echo "Resource,Namespace,Name,CPU,Memory"
+
+  kubectl top "$RESOURCE_TYPE" -n "$NAMESPACE" 2>/dev/null | tail -n +2 | while read -r line
+  do
+    NAME=$(echo "$line" | awk '{print $1}')
+    CPU=$(echo "$line" | awk '{print $2}')
+    MEMORY=$(echo "$line" | awk '{print $3}')
+    echo "Pod,$NAMESPACE,$NAME,$CPU,$MEMORY"
+  done
+} | column -t -s,
+
+
