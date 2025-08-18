@@ -4,6 +4,25 @@
 #   $1 = namespace (e.g. kube-system)
 #   $2 = resource type (pods|nodes), defaults to pods
 
+usage() {
+  echo "Usage: kubectl kubeplugin <namespace> [resource]"
+  echo
+  echo "Arguments:"
+  echo "  namespace   Kubernetes namespace (e.g. kube-system)"
+  echo "  resource    Resource type: pods (default) or nodes"
+  echo
+  echo "Examples:"
+  echo "  kubectl kubeplugin kube-system"
+  echo "  kubectl kubeplugin kube-system pods"
+  echo "  kubectl kubeplugin default nodes"
+  exit 0
+}
+
+# Show help if -h or --help provided
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+  usage
+fi
+
 NAMESPACE="$1"
 RESOURCE_TYPE="${2:-pods}"
 
